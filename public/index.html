@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Vacabulary</title>
+
+	 <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+    <style>
+		img {
+   		 	width:300px;
+   		 	height:200px;
+		}
+	</style>
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<!-- <div ng-app="" class = "container-fluid"> -->
+	<div class = "row">
+		<!-- Navbar -->
+      	<nav class="navbar navbar-inverse">
+ 		 	<div class="container-fluid">
+    			<div class="navbar-header">
+      				<a class="navbar-brand" href="index.html">Vacabulary</a>
+    			</div>
+    			<!-- <ul class="nav navbar-nav">
+      				<li><a href="login.html">Admin</a></li>
+      			</ul> -->
+  			</div>
+		</nav>
+		
+	</div>
+	
+	<div class = "row">
+		<div class = "container-fluid">
+			<h3><center>
+			<div class="form-group">
+
+			<!-- <label>Search : </label>
+			<input type="text" ng-model="searchString" placeholder="Images that you want" /> -->
+
+			<label>Select Type: </label>
+					<select ng-model="myVar" >
+  						<option value="natures">Natures
+  						<option value="Bugs">Bugs
+  						<option value="fruits">Fruits
+					</select>
+			ENG : <input type="checkbox" ng-model="myShow">
+			TH : <input type="checkbox" ng-model="thShow">
+			</center></h3>
+		</div>
+		</div>
+				
+	</div>
+	<div class = "row">
+		<div class = "container-fluid" >
+			<br>
+			<div class="col-sm-6">
+			<hr>
+				<div ng-switch="myVar">
+  					<h3><div ng-switch-when="natures" >
+     					<div ng-init="nature = 'image/sea.jpg'">
+     						<img ng-src="{{nature}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Beach}}</b>
+     						<b ng-show="thShow">{{thNature[0]}}</b>
+     					</div><br>
+     					<div ng-init="nature2 = 'image/sea2.jpg'">
+     						<img ng-src="{{nature2}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Lagoon}}</b>
+     						<b ng-show="thShow">{{thNature[1]}}</b>
+     					</div><br>
+     					<div ng-init="nature3 = 'image/sea3.jpg'">
+     						<img ng-src="{{nature3}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Desert}}</b>
+     						<b ng-show="thShow">{{thNature[2]}}</b>
+     					</div><br>
+  					</div>
+  					<div ng-switch-when="Bugs">
+     					<div ng-init="Bug = 'image/bee.jpg'">
+     						<img ng-src="{{Bug}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Bee}}</b>
+     						<b ng-show="thShow">{{thBug[0]}}</b>
+     					</div><br>
+     					<div ng-init="Bug2 = 'image/dgf.jpg'">
+     						<img ng-src="{{Bug2}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Dragonfly}}</b>
+     						<b ng-show="thShow">{{thBug[1]}}</b>
+     					</div><br>
+     					<div ng-init="Bug3 = 'image/ant.jpg'">
+     						<img ng-src="{{Bug3}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Ant}}</b>
+     						<b ng-show="thShow">{{thBug[2]}}</b>
+     					</div><br>
+  					</div>
+  					<div ng-switch-when="fruits">
+     					<div ng-init="fruit = 'image/stbr.jpg'">
+     						<img ng-src="{{fruit}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Strawberry}}</b>
+     						<b ng-show="thShow">{{thFruit[0]}}</b>
+     					</div><br>
+     					<div ng-init="fruit2 = 'image/bnn.jpg'">
+     						<img ng-src="{{fruit2}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Banana}}</b>
+     						<b ng-show="thShow">{{thFruit[1]}}</b>
+     					</div><br>
+     					<div ng-init="fruit3 = 'image/grp.jpg'">
+     						<img ng-src="{{fruit3}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Grape}}</b>
+     						<b ng-show="thShow">{{thFruit[2]}}</b>
+     					</div><br>
+  					</div>
+  					<div ng-switch-default>
+     					
+  					</div>
+				</div>			
+			<!-- <hr> -->
+			</div>
+			<!-- <div class="col-sm-3" ng-app="myApp" ng-controller="myCtrl">
+			<hr>
+				{{carname}}
+			<hr>
+			</div> -->
+  			<div class="col-sm-6">
+  			<hr>
+				<div ng-switch="myVar">
+  					<h3><div ng-switch-when="natures">
+     					<div ng-init="nature4 = 'image/moun.jpg'">
+     						<img ng-src="{{nature4}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Mountain}}</b>
+     						<b ng-show="thShow">{{thNature[3]}}</b>
+     					</div><br>
+     					<div ng-init="nature5 = 'image/forest.jpg'">
+     						<img ng-src="{{nature5}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Forest}}</b>
+     						<b ng-show="thShow">{{thNature[4]}}</b>
+     					</div><br>
+     					<div ng-init="nature6= 'image/wtf.jpg'">
+     						<img ng-src="{{nature6}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Waterfall}}</b>
+     						<b ng-show="thShow">{{thNature[5]}}</b>
+     					</div><br>
+  					</div>
+  					<div ng-switch-when="Bugs">
+     					<div ng-init="Bug4 = 'image/hop.jpg'">
+     						<img ng-src="{{Bug4}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Hopper}}</b>
+     						<b ng-show="thShow">{{thBug[3]}}</b>
+     					</div><br>
+     					<div ng-init="Bug5 = 'image/btf.jpg'">
+     						<img ng-src="{{Bug5}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Butterfly}}</b>
+     						<b ng-show="thShow">{{thBug[4]}}</b>
+     					</div><br>
+     					<div ng-init="Bug6 = 'image/spd.jpg'">
+     						<img ng-src="{{Bug6}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Scorpion}}</b>
+     						<b ng-show="thShow">{{thBug[5]}}</b>
+     					</div><br>
+  					</div>
+  					<div ng-switch-when="fruits">
+     					<div ng-init="fruit4 = 'image/lemon.jpg'">
+     						<img ng-src="{{fruit4}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Lemon}}</b>
+     						<b ng-show="thShow">{{thFruit[3]}}</b>
+     					</div><br>
+     					<div ng-init="fruit5 = 'image/orn.jpg'">
+     						<img ng-src="{{fruit5}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Orange}}</b>
+     						<b ng-show="thShow">{{thFruit[4]}}</b>
+     					</div><br>
+     					<div ng-init="fruit6 = 'image/wtml.jpg'">
+     						<img ng-src="{{fruit6}}">&nbsp;&nbsp;
+     						<b ng-show="myShow">{{Watermelon}}</b>
+     						<b ng-show="thShow">{{thFruit[5]}}</b>
+     					</div><br>
+  					</div>
+  					<div ng-switch-default>
+     					
+  					</div>
+				</div>			
+			<!-- <hr> -->	
+  			</div>
+  			<!-- <div class="col-sm-3">
+  			<hr>
+
+  			<hr>
+			</div> -->
+  		</div>
+	</div>
+	<!-- </div> -->
+</body>
+</html>
+
+<script>
+	var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+    	
+    	$scope.Beach = "Beach"; $scope.Lagoon = "Lagoon";
+    	$scope.Desert = "Desert";  $scope.Mountain = "Mountain";
+    	$scope.Forest = "Forest"; $scope.Waterfall = "Waterfall";
+
+    	$scope.Bee = "Bee";  $scope.Hopper = "Hopper";
+    	$scope.Dragonfly = "Dragonfly"; $scope.Butterfly = "Butterfly";
+    	$scope.Ant = "Ant"; $scope.Scorpion = "Scorpion";
+
+    	$scope.Strawberry = "Strawberry"; $scope.Lemon = "Lemon";
+    	$scope.Banana = "Banana"; $scope.Orange = "Orange";
+    	$scope.Grape= "Grape"; $scope.Watermelon = "Watermelon";
+
+
+		 $scope.thNature = ["ชายหาด", "ทะเลสาบ", "ทะเลทราย","ภูเขา","ป่า","น้ำตก"];
+		 $scope.thBug = ["ผึ้ง", "แมลงปอ", "มด","ตั๊กแตน","ผีเสื้อ","แมงมุม"];
+		 $scope.thFruit = ["สตรอเบอร์รี่", "กล้วย", "องุ่น","มะนาว","ส้ม","แตงโม"];
+		 
+});
+</script>
