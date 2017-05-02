@@ -4,7 +4,7 @@
   "description": "web for search photo that you want find.",
   "repository": {
         "type": "git",
-        "url": "git://github.com/70K3/GallerySearch.git"
+        "url": "git://github.com/70K3/Vocabulary.git"
     },
 
   "main": "index.js",
