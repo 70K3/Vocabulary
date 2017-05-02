@@ -11,6 +11,6 @@ app.use('/api', bodyParser.json(), router);
 
 
 
-app.listen(50074, function() {
+app.listen(80, function() {
 	console.log("Server is running")
 });
